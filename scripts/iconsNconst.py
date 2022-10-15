@@ -5,20 +5,20 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk as gtk
 from gi.repository import GdkPixbuf
 
-sc_w, sc_h = get_monitors()[0].width, get_monitors()[0].height #get monitors resolution
-win_w, win_h, w_const, h_const = sc_w, sc_h, 0.417, 0.31275 #set default constants
-
 #that IF-ELSE block do dynamic change of window size by use screen resolution
 
 
 class Datas:
     def __init__(self):
-        if sc_w <= 1920 and sc_h <= 1080:
-            win_w, win_h = 800, 600
+        self.sc_w, sc_h = get_monitors()[0].width, get_monitors()[0].height #get monitors resolution
+        self.win_w, self.win_h, self.w_const, self.h_const = self.sc_w, self.sc_h, 0.417, 0.31275 #set default constants
+
+        if self.sc_w <= 1920 and self.sc_h <= 1080:
+            self.win_w, self.win_h = 800, 600
         else:
-            win_w, win_h = sc_w * 0.417, sc_w * 0.31275
-        self.main_top_mar = (win_h - (win_w / 5) * 2) / 3 #margin-top constant
-        self.main_const = win_w / 5#win_w / 5 #constant for button widht\height and margin-start
+            self.win_w, self.win_h = self.sc_w * 0.417, self.sc_w * 0.31275
+        self.main_top_mar = (self.win_h - (self.win_w / 5) * 2) / 3 #margin-top constant
+        self.main_const = self.win_w / 5#win_w / 5 #constant for button widht\height and margin-start
         self.icon_size = self.main_const * 0.85
         
 
