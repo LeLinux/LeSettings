@@ -5,7 +5,7 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk as gtk
 from gi.repository import GdkPixbuf
 
-import scripts.iconsNconst as inc
+from scripts.iconsNconst import *
 import scripts.go2 as g2
 import scripts.menus.main_menu as mm
 import scripts.menus.system_grid as sg

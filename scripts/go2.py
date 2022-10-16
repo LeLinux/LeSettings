@@ -1,7 +1,7 @@
 import gi
 gi.require_version("Gtk", "3.0")
 
-import scripts.iconsNconst as inc
+from scripts.iconsNconst import *
 from scripts.menus import main_menu, system_grid, headbar
 #from scripts.menus import *
 

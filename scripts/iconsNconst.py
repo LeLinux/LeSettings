@@ -10,17 +10,16 @@ from gi.repository import GdkPixbuf
 
 class Datas:
     def __init__(self):
-        self.sc_w, sc_h = get_monitors()[0].width, get_monitors()[0].height #get monitors resolution
-        self.win_w, self.win_h, self.w_const, self.h_const = self.sc_w, self.sc_h, 0.417, 0.31275 #set default constants
+        self.win_w, self.win_h = get_monitors()[0].width, get_monitors()[0].height #get monitors resolution
+        self.w_const, self.h_const = 0.417, 0.31275 #set default constants
 
-        if self.sc_w <= 1920 and self.sc_h <= 1080:
+        if self.win_w <= 1920 and self.win_h <= 1080:
             self.win_w, self.win_h = 800, 600
         else:
-            self.win_w, self.win_h = self.sc_w * 0.417, self.sc_w * 0.31275
+            self.win_w, self.win_h = self.win_w * 0.417, self.win_w * 0.31275
         self.main_top_mar = (self.win_h - (self.win_w / 5) * 2) / 3 #margin-top constant
         self.main_const = self.win_w / 5#win_w / 5 #constant for button widht\height and margin-start
         self.icon_size = self.main_const * 0.85
-        
 
         #ICONS
         #=====
