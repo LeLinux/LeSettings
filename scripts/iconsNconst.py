@@ -33,6 +33,9 @@ class Datas:
 
         self.pixbuf_appearance_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename = "/usr/share/icons/candy-icons/preferences/scalable/preferences-desktop-wallpaper.svg", width = self.icon_size, height = self.icon_size, preserve_aspect_ratio = 1)
 
+        #System menu PIXBUF-s
+        self.pixbuf_langNreg_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename="/usr/share/icons/candy-icons/preferences/scalable/config-language.svg", width = self.icon_size, height = self.icon_size, preserve_aspect_ratio = 1)
+
         #PIXBUF-S to ICONS
         #=====
         #main menu icons
@@ -40,5 +43,9 @@ class Datas:
         self.conn_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_connections_b_icon)
         self.devices_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_devices_b_icon)
         self.appearance_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_appearance_b_icon)
+
+        #System menu icons
+        self.langNreg_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_langNreg_b_icon)
+
 
 inc = Datas()
