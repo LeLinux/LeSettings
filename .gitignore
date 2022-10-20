@@ -1,3 +1,7 @@
 
 *.pyc
 *.pyc
+scripts/menus/__pycache__/headbar.cpython-310.pyc
+scripts/menus/__pycache__/main_menu.cpython-310.pyc
+scripts/menus/__pycache__/headbar.cpython-310.pyc
+scripts/menus/__pycache__/system_grid.cpython-310.pyc

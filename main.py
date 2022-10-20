@@ -7,23 +7,17 @@ from gi.repository import GdkPixbuf
 
 from scripts.iconsNconst import *
 import scripts.go2 as g2
-import scripts.menus.main_menu as mm
-import scripts.menus.system_grid as sg
 import scripts.menus.headbar as hdb
+import scripts.main_fixed as mf
 import scripts.button_connect as btnc
 
 class Main(gtk.Window):
     def __init__(self):
 
         super().__init__()
-        self.main_fixed = gtk.Fixed()
-        self.main_fixed.add(mm.main_menu)
-        self.main_fixed.move(mm.main_menu, 0, 0)
-        self.main_fixed.add(sg.sys_grid)
-        self.main_fixed.move(sg.sys_grid, -1 * inc.win_w - 100, -1 * inc.win_h - 100)
 
 
-        self.add(self.main_fixed)
+        self.add(mf.main_fixed)
         self.set_titlebar(hdb.headb)
         btnc.btn_connect()
         self.show_all()

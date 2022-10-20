@@ -12,7 +12,7 @@ back2before_b.set_relief(gtk.ReliefStyle.NONE)
 
 headb_fixed = gtk.Fixed()
 headb_fixed.add(back2before_b)
-headb_fixed.move(back2before_b, -1 * inc.main_const, -1 * inc.main_const)
+headb_fixed.move(back2before_b, -1 * inc.main_const_def, -1 * inc.main_const_def)
 gtk.StyleContext.add_class(headb_fixed.get_style_context(), "linked")
 
 
