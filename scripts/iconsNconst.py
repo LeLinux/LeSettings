@@ -64,7 +64,7 @@ class Datas:
         self.pixbuf_multitask_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename = "/usr/share/icons/candy-icons/preferences/scalable/cs-themes.svg", width = self.icon_size_def, height = self.icon_size_def, preserve_aspect_ratio = 1)
         self.pixbuf_themes_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename = "/usr/share/icons/candy-icons/preferences/scalable/preferences-theme.svg", width = self.icon_size_def, height = self.icon_size_def, preserve_aspect_ratio = 1)
         self.pixbuf_fonts_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename = "/usr/share/icons/candy-icons/apps/scalable/fonts.svg", width = self.icon_size_def, height = self.icon_size_def, preserve_aspect_ratio = 1)
-        self.pixbuf_desktop_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename = "/usr/share/icons/candy-icons/apps/scalable/fonts.svg", width = self.icon_size_def, height = self.icon_size_def, preserve_aspect_ratio = 1)
+        self.pixbuf_desktop_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename = "/usr/share/icons/candy-icons/apps/scalable/deepin-show-desktop.svg", width = self.icon_size_def, height = self.icon_size_def, preserve_aspect_ratio = 1)
 
         #PIXBUF-S to ICONS
         #=====

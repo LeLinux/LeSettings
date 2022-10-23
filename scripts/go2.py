@@ -59,7 +59,6 @@ def go2menu(btn):
         main_fixed.move(devices_menu.devices_menu, -1 * inc.win_w - 100, -1 * inc.win_h - 100)
     elif position == 4:
         main_fixed.move(appearance_menu.appear_menu, -1 * inc.win_w - 100, -1 * inc.win_h - 100)
-
     position = 0
     headbar.headb_fixed.move(headbar.back2before_b, -1 * inc.win_w, -1 * inc.win_h)
     print("[LOG] GO2MENU function finished")
