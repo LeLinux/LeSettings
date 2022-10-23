@@ -1,4 +1,4 @@
-from screeninfo import get_monitors  
+from screeninfo import get_monitors
 import gi
 gi.require_version("Gtk", "3.0")
 
@@ -29,9 +29,9 @@ class Datas:
         #PIXBUF-S
         #Main menu PIXBUF-s
         self.pixbuf_system_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename="/usr/share/icons/candy-icons/preferences/scalable/cs-windows.svg", width = self.icon_size_def, height = self.icon_size_def, preserve_aspect_ratio = 1)
-        
+
         self.pixbuf_connections_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename="/usr/share/icons/candy-icons/preferences/scalable/preferences-system-network.svg", width = self.icon_size_def, height = self.icon_size_def, preserve_aspect_ratio = 1)
-        
+
         self.pixbuf_devices_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename = "/usr/share/icons/candy-icons/preferences/scalable/display-capplet.svg", width = self.icon_size_def, height = self.icon_size_def, preserve_aspect_ratio = 1)
 
         self.pixbuf_appearance_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename = "/usr/share/icons/candy-icons/preferences/scalable/preferences-desktop-wallpaper.svg", width = self.icon_size_def, height = self.icon_size_def, preserve_aspect_ratio = 1)
@@ -47,11 +47,24 @@ class Datas:
 
         self.pixbuf_sound_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename="/usr/share/icons/candy-icons/apps/scalable/gnome-mixer.svg", width = self.icon_size_def* 0.77, height = self.icon_size_def* 0.77, preserve_aspect_ratio = 1)
 
-        self.pixbuf_power_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename="/usr/share/icons/candy-icons/devices/scalable/battery.svg", width = self.icon_size_def* 0.77, height = self.icon_size_def* 0.77, preserve_aspect_ratio = 1)
+        self.pixbuf_power_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename="/usr/share/icons/candy-icons/apps/scalable/preferences-system-power.svg", width = self.icon_size_def* 0.77, height = self.icon_size_def* 0.77, preserve_aspect_ratio = 1)
 
         #connection menu PIXBUF-s
-        self.pixbuf_wifi_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename="/usr/share/icons/candy-icons/devices/scalable/battery.svg", width = self.icon_size_def, height = self.icon_size_def, preserve_aspect_ratio = 1)
+        self.pixbuf_wifi_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename="/usr/share/icons/candy-icons/apps/scalable/spotify.svg", width = self.icon_size_def, height = self.icon_size_def, preserve_aspect_ratio = 1)
+        self.pixbuf_bluetooth_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename="/usr/share/icons/candy-icons/apps/scalable/bluetooth.svg", width = self.icon_size_def, height = self.icon_size_def, preserve_aspect_ratio = 1)
+        self.pixbuf_ethernet_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename="/usr/share/icons/candy-icons/preferences/scalable/preferences-system-network-ethernet.svg", width = self.icon_size_def, height = self.icon_size_def, preserve_aspect_ratio = 1)
 
+        #devices menu PIXBUF-s
+        self.pixbuf_displays_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename = "/usr/share/icons/candy-icons/preferences/scalable/display-capplet.svg", width = self.icon_size_def, height = self.icon_size_def, preserve_aspect_ratio = 1)
+        self.pixbuf_keyboard_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename = "/usr/share/icons/candy-icons/devices/scalable/input-keyboard.svg", width = self.icon_size_def, height = self.icon_size_def, preserve_aspect_ratio = 1)
+        self.pixbuf_mouse_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename = "/usr/share/icons/candy-icons/devices/scalable/input-mouse.svg", width = self.icon_size_def, height = self.icon_size_def, preserve_aspect_ratio = 1)
+        self.pixbuf_printers_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename = "/usr/share/icons/candy-icons/preferences/scalable/cs-printer.svg", width = self.icon_size_def, height = self.icon_size_def, preserve_aspect_ratio = 1)
+
+        #appearance menu PIXBUF-s
+        self.pixbuf_multitask_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename = "/usr/share/icons/candy-icons/preferences/scalable/cs-themes.svg", width = self.icon_size_def, height = self.icon_size_def, preserve_aspect_ratio = 1)
+        self.pixbuf_themes_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename = "/usr/share/icons/candy-icons/preferences/scalable/preferences-theme.svg", width = self.icon_size_def, height = self.icon_size_def, preserve_aspect_ratio = 1)
+        self.pixbuf_fonts_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename = "/usr/share/icons/candy-icons/apps/scalable/fonts.svg", width = self.icon_size_def, height = self.icon_size_def, preserve_aspect_ratio = 1)
+        self.pixbuf_desktop_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename = "/usr/share/icons/candy-icons/apps/scalable/fonts.svg", width = self.icon_size_def, height = self.icon_size_def, preserve_aspect_ratio = 1)
 
         #PIXBUF-S to ICONS
         #=====
@@ -71,15 +84,27 @@ class Datas:
 
         #connections menu icons
         self.wifi_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_wifi_b_icon)
+        self.bluetooth_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_bluetooth_b_icon)
+        self.ethernet_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_ethernet_b_icon)
 
+        #devices menu icons
+        self.displays_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_displays_b_icon)
+        self.keyboard_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_keyboard_b_icon)
+        self.mouse_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_mouse_b_icon)
+        self.printers_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_printers_b_icon)
 
+        #appearance menu icons
+        self.multitask_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_multitask_b_icon)
+        self.themes_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_themes_b_icon)
+        self.fonts_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_fonts_b_icon)
+        self.desktop_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_desktop_b_icon)
 
 
 inc = Datas()
 
 def get_consts(button_nums):
     if button_nums == 3:
-        return inc.main_const_def * 3/4, inc.main_top_mar_def / 1.35
+        return inc.main_const_def, inc.main_top_mar_def / 1.35
     elif button_nums == 4:
         return inc.main_const_def, inc.main_top_mar_def / 3
     elif 5 <= button_nums <= 6:
