@@ -9,7 +9,6 @@ import scripts.go2 as g2
 back2before_b = gtk.Button(label = "Back")
 back2before_b.set_relief(gtk.ReliefStyle.NONE)
 
-
 headb_fixed = gtk.Fixed()
 headb_fixed.add(back2before_b)
 headb_fixed.move(back2before_b, -1 * inc.main_const_def, -1 * inc.main_const_def)

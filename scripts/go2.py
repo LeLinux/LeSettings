@@ -3,6 +3,7 @@ gi.require_version("Gtk", "3.0")
 
 from scripts.iconsNconst import *
 from scripts.menus import main_menu, system_grid, headbar, conns_menu, devices_menu, appearance_menu
+from scripts.menus.system import dateNtime
 from scripts.main_fixed import *
 
 window = None
@@ -20,6 +21,11 @@ def go2system(btn):
     position = 1
     headbar.headb_fixed.move(headbar.back2before_b, 0, 0)
     print("[LOG] GO2SYSTEM function finished")
+
+def go2dateNtime(btn):
+    global window, position
+    main_fixed.move(dateNtime.dnt_grid, 0, 0)
+    main_fixed.move(system_grid.sys_grid, -1 * inc.win_w - 100, -1 * inc.win_h - 100)
 
 def go2conns(btn):
     global window, position

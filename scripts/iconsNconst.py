@@ -24,6 +24,8 @@ class Datas:
         self.icon_size_def = self.main_const_def * 0.85
         #self.main_const = self.main_const_def
         #self.main_top_mar = self.main_top_mar_def
+        print("[LOG] Window width " + str(self.win_w))
+        print("[LOG] Window height " + str(self.win_h))
         #ICONS
         #=====
         #PIXBUF-S
