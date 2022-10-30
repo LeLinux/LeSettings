@@ -24,6 +24,7 @@ def go2system(btn):
 
 def go2dateNtime(btn):
     global window, position
+    position = 6
     main_fixed.move(dateNtime.dnt_grid, 0, 0)
     main_fixed.move(system_grid.sys_grid, -1 * inc.win_w - 100, -1 * inc.win_h - 100)
 
@@ -56,15 +57,23 @@ def go2appear(btn):
 def go2menu(btn):
     global window, position
     print("[LOG] GO2MENU function started")
-    main_fixed.move(main_menu.main_menu, 0, 0)
     if position == 1:
         main_fixed.move(system_grid.sys_grid, -1 * inc.win_w - 100, -1 * inc.win_h - 100)
+        main_fixed.move(main_menu.main_menu, 0, 0)
     elif position == 2:
         main_fixed.move(conns_menu.conns_grid, -1 * inc.win_w - 100, -1 * inc.win_h - 100)
+        main_fixed.move(main_menu.main_menu, 0, 0)
     elif position == 3:
         main_fixed.move(devices_menu.devices_menu, -1 * inc.win_w - 100, -1 * inc.win_h - 100)
+        main_fixed.move(main_menu.main_menu, 0, 0)
     elif position == 4:
         main_fixed.move(appearance_menu.appear_menu, -1 * inc.win_w - 100, -1 * inc.win_h - 100)
+        main_fixed.move(main_menu.main_menu, 0, 0)
+    elif position == 5:
+        pass
+    elif position == 6:
+        main_fixed.move(dateNtime.dnt_grid, -1 * inc.win_w -100, -1 *  inc.win_h - 100)
+        main_fixed.move(system_grid.sys_grid, 0, 0)
     position = 0
     headbar.headb_fixed.move(headbar.back2before_b, -1 * inc.win_w, -1 * inc.win_h)
     print("[LOG] GO2MENU function finished")
