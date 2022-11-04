@@ -19,14 +19,16 @@ def go2system(btn):
     main_fixed.move(main_menu.main_menu, -1 * inc.win_w - 100, -1 * inc.win_h - 100)
     main_fixed.move(system_grid.sys_grid, 0, 0)
     position = 1
-    headbar.headb_fixed.move(headbar.back2before_b, 0, 0)
+    headbar.headb_fixed.move(headbar.back2menu, 0, 0)
+    headbar.headb_fixed.move(headbar.back2system, -1 * inc.win_w - 100, -1 * inc.win_h - 100)
     print("[LOG] GO2SYSTEM function finished")
 
 def go2dateNtime(btn):
     global window, position
-    position = 6
     main_fixed.move(dateNtime.dnt_grid, 0, 0)
     main_fixed.move(system_grid.sys_grid, -1 * inc.win_w - 100, -1 * inc.win_h - 100)
+    position = 6
+    print("position = " + str(position))
 
 def go2conns(btn):
     global window, position
@@ -41,7 +43,7 @@ def go2devices(btn):
     main_fixed.move(main_menu.main_menu, -1 * inc.win_w - 100, -1 * inc.win_h - 100)
     main_fixed.move(devices_menu.devices_menu, 0, 0)
     position = 3
-    headbar.headb_fixed.move(headbar.back2before_b, 0, 0)
+    headbar.headb_fixed.move(headbar.back2m, 0, 0)
     print("[LOG] GO2DEVICES function finished")
 
 def go2appear(btn):
@@ -51,7 +53,7 @@ def go2appear(btn):
     main_fixed.move(appearance_menu.appear_menu, 0, 0)
     position = 4
     headbar.headb_fixed.move(headbar.back2before_b, 0, 0)
-    print("[LOG] GO2APPEAR function finished")
+    print("[LOG] GO2APPEAR function finished. Position = " + str(position))
 
 
 def go2menu(btn):
@@ -60,23 +62,26 @@ def go2menu(btn):
     if position == 1:
         main_fixed.move(system_grid.sys_grid, -1 * inc.win_w - 100, -1 * inc.win_h - 100)
         main_fixed.move(main_menu.main_menu, 0, 0)
+        headbar.headb_fixed.move(headbar.back2before_b, -1 * inc.win_w, -1 * inc.win_h)
+        position = 0
     elif position == 2:
         main_fixed.move(conns_menu.conns_grid, -1 * inc.win_w - 100, -1 * inc.win_h - 100)
         main_fixed.move(main_menu.main_menu, 0, 0)
+        headbar.headb_fixed.move(headbar.back2before_b, -1 * inc.win_w, -1 * inc.win_h)
+        position = 0
     elif position == 3:
         main_fixed.move(devices_menu.devices_menu, -1 * inc.win_w - 100, -1 * inc.win_h - 100)
         main_fixed.move(main_menu.main_menu, 0, 0)
+        headbar.headb_fixed.move(headbar.back2before_b, -1 * inc.win_w, -1 * inc.win_h)
+        position = 0
     elif position == 4:
         main_fixed.move(appearance_menu.appear_menu, -1 * inc.win_w - 100, -1 * inc.win_h - 100)
         main_fixed.move(main_menu.main_menu, 0, 0)
-    elif position == 5:
-        pass
-    elif position == 6:
-        main_fixed.move(dateNtime.dnt_grid, -1 * inc.win_w -100, -1 *  inc.win_h - 100)
-        main_fixed.move(system_grid.sys_grid, 0, 0)
-    position = 0
-    headbar.headb_fixed.move(headbar.back2before_b, -1 * inc.win_w, -1 * inc.win_h)
-    print("[LOG] GO2MENU function finished")
+        headbar.headb_fixed.move(headbar.back2before_b, -1 * inc.win_w, -1 * inc.win_h)
+        position = 0
+    print("[LOG] GO2MENU function finished. Position = " + str(position))
+
+
 
 def back2before(btn):
     global window, position
