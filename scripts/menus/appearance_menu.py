@@ -5,56 +5,42 @@ from gi.repository import Gtk as gtk
 
 from scripts.iconsNconst import *
 import scripts.go2 as g2
+import scripts.button_settings as btns
+
 
 main_const, main_top_mar = get_consts(4)
 
 multitask_b = gtk.Button(label = "Multitasking")
-multitask_b.set_relief(gtk.ReliefStyle.NONE)
-multitask_b.get_style_context().add_class("button")
-multitask_b.set_image(inc.multitask_b_icon)
-multitask_b.set_image_position(gtk.PositionType.TOP)
-multitask_b.set_use_underline(1)
-multitask_b.set_always_show_image(1)
-multitask_b.set_property("width-request", main_const)
-multitask_b.set_property("height-request", main_const)
-multitask_b.set_margin_top(main_top_mar)
-multitask_b.set_margin_start(main_const)
+btns.set_button_data(multitask_b,
+                    main_const,
+                    main_const,
+                    main_top_mar,
+                    main_const,
+                    inc.multitask_b_icon)
 
 themes_b = gtk.Button(label = "Themes")
-themes_b.set_relief(gtk.ReliefStyle.NONE)
-themes_b.get_style_context().add_class("button")
-themes_b.set_image(inc.themes_b_icon)
-themes_b.set_image_position(gtk.PositionType.TOP)
-themes_b.set_use_underline(1)
-themes_b.set_always_show_image(1)
-themes_b.set_property("width-request", main_const)
-themes_b.set_property("height-request", main_const)
-themes_b.set_margin_top(main_top_mar)
-themes_b.set_margin_start(main_const)
+btns.set_button_data(themes_b,
+                    main_const,
+                    main_const,
+                    main_top_mar,
+                    main_const,
+                    inc.themes_b_icon)
 
 fonts_b = gtk.Button(label = "Fonts")
-fonts_b.set_relief(gtk.ReliefStyle.NONE)
-fonts_b.get_style_context().add_class("button")
-fonts_b.set_image(inc.fonts_b_icon)
-fonts_b.set_image_position(gtk.PositionType.TOP)
-fonts_b.set_use_underline(1)
-fonts_b.set_always_show_image(1)
-fonts_b.set_property("width-request", main_const)
-fonts_b.set_property("height-request", main_const)
-fonts_b.set_margin_top(main_top_mar)
-fonts_b.set_margin_start(main_const)
+btns.set_button_data(fonts_b,
+                    main_const,
+                    main_const,
+                    main_top_mar,
+                    main_const,
+                    inc.fonts_b_icon)
 
 desktop_b = gtk.Button(label = "Desktop")
-desktop_b.set_relief(gtk.ReliefStyle.NONE)
-desktop_b.get_style_context().add_class("button")
-desktop_b.set_image(inc.desktop_b_icon)
-desktop_b.set_image_position(gtk.PositionType.TOP)
-desktop_b.set_use_underline(1)
-desktop_b.set_always_show_image(1)
-desktop_b.set_property("width-request", main_const)
-desktop_b.set_property("height-request", main_const)
-desktop_b.set_margin_top(main_top_mar)
-desktop_b.set_margin_start(main_const)
+btns.set_button_data(desktop_b,
+                    main_const,
+                    main_const,
+                    main_top_mar,
+                    main_const,
+                    inc.desktop_b_icon)
 
 appear_menu = gtk.Grid()
 appear_menu.add(multitask_b)

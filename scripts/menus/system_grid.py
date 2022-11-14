@@ -9,7 +9,6 @@ import scripts.go2 as g2
 
 main_const, main_top_mar = get_consts(6)
 
-
 langNreg = gtk.Button(label = "Language & Region")
 langNreg.set_relief(gtk.ReliefStyle.NONE)
 langNreg.get_style_context().add_class("button")
@@ -83,10 +82,9 @@ power_b.set_use_underline(1)
 power_b.set_always_show_image(1)
 
 
-
 sys_grid = gtk.Grid()
 sys_grid.add(langNreg)
-sys_grid.attach(langNreg, 1, 0, 2, 1)
+sys_grid.attach(langNreg, 0, 0, 0, 0)
 sys_grid.attach_next_to(dateNtime, langNreg, gtk.PositionType.RIGHT, 1, 1)
 sys_grid.attach_next_to(sound_b, dateNtime, gtk.PositionType.RIGHT, 1, 1)
 sys_grid.attach_next_to(power_b, langNreg, gtk.PositionType.BOTTOM, 1, 1)

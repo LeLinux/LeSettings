@@ -12,9 +12,15 @@ from gi.repository import GdkPixbuf
 
 class Datas:
     def __init__(self):
-        self.win_w, self.win_h = get_monitors()[0].width, get_monitors()[0].height #get monitors resolution
+        self.win = get_monitors() #get monitors resolution
+        self.win_w, self.win_h = 0, 0
+        for i in range(len(get_monitors())):
+            if self.win_w < self.win[i].width:
+                self.win_w = self.win[i].width
+                self.win_h = self.win[i].height
         self.w_const, self.h_const = 0.417, 0.31275 #set default constants
-
+        print("[LOG] display width " , self.win_w)
+        print("[LOG] display height " , self.win_h)
         if self.win_w <= 1920 and self.win_h <= 1080:
             self.win_w, self.win_h = 800, 600
         else:
@@ -72,7 +78,7 @@ class Datas:
         #=====
         #main menu icons
         self.system_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_system_b_icon)
-        self.conn_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_connections_b_icon)
+        self.conns_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_connections_b_icon)
         self.devices_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_devices_b_icon)
         self.appearance_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_appearance_b_icon)
 

@@ -5,44 +5,35 @@ from gi.repository import Gtk as gtk
 
 from scripts.iconsNconst import *
 import scripts.go2 as g2
+import scripts.button_settings as btns
+
 
 main_const, main_top_mar = get_consts(3)
 
 wifi_b = gtk.Button(label = "Wi-Fi")
-wifi_b.set_relief(gtk.ReliefStyle.NONE)
-wifi_b.get_style_context().add_class("button")
-wifi_b.set_property("width-request", main_const)
-wifi_b.set_property("height-request", main_const)
-wifi_b.set_margin_top(main_top_mar)
-wifi_b.set_margin_start(main_const / 2)
-wifi_b.set_image(inc.wifi_b_icon)
-wifi_b.set_image_position(gtk.PositionType.TOP)
-wifi_b.set_use_underline(1)
-wifi_b.set_always_show_image(1)
+btns.set_button_data(wifi_b,
+                    main_const,
+                    main_const,
+                    main_top_mar,
+                    main_const/2,
+                    inc.wifi_b_icon)
+
 
 bluetooth_b = gtk.Button(label = "Bluetooth")
-bluetooth_b.set_relief(gtk.ReliefStyle.NONE)
-bluetooth_b.get_style_context().add_class("button")
-bluetooth_b.set_property("width-request", main_const)
-bluetooth_b.set_property("height-request", main_const)
-bluetooth_b.set_margin_top(main_top_mar)
-bluetooth_b.set_margin_start(main_const / 2)
-bluetooth_b.set_image(inc.bluetooth_b_icon)
-bluetooth_b.set_image_position(gtk.PositionType.TOP)
-bluetooth_b.set_use_underline(1)
-bluetooth_b.set_always_show_image(1)
+btns.set_button_data(bluetooth_b,
+                    main_const,
+                    main_const,
+                    main_top_mar,
+                    main_const/2,
+                    inc.bluetooth_b_icon)
 
 ethernet_b = gtk.Button(label = "Ethernet")
-ethernet_b.set_relief(gtk.ReliefStyle.NONE)
-ethernet_b.get_style_context().add_class("button")
-ethernet_b.set_property("width-request", main_const)
-ethernet_b.set_property("height-request", main_const)
-ethernet_b.set_margin_top(main_top_mar)
-ethernet_b.set_margin_start(main_const / 2)
-ethernet_b.set_image(inc.ethernet_b_icon)
-ethernet_b.set_image_position(gtk.PositionType.TOP)
-ethernet_b.set_use_underline(1)
-ethernet_b.set_always_show_image(1)
+btns.set_button_data(ethernet_b,
+                    main_const,
+                    main_const,
+                    main_top_mar,
+                    main_const/2,
+                    inc.ethernet_b_icon)
 
 conns_grid = gtk.Grid()
 conns_grid.add(wifi_b)

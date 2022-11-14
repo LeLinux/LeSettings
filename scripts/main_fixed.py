@@ -1,16 +1,16 @@
 import gi
-from screeninfo import get_monitors
 gi.require_version("Gtk", "3.0")
 
 from gi.repository import Gtk as gtk
 
 import scripts.menus.main_menu as mm
+
 import scripts.menus.conns_menu as cnm
 import scripts.menus.system_grid as sg
 import scripts.menus.devices_menu as dm
 import scripts.menus.appearance_menu as am
-import scripts.menus.system.dateNtime as dnt
 
+import scripts.menus.system.dateNtime as dnt
 
 from scripts.iconsNconst import *
 

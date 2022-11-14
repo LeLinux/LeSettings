@@ -67,7 +67,6 @@ spacer_l.set_xalign(0)
 spacer_l.set_margin_start(mar_start)
 spacer_l.set_margin_top(mar_top)
 
-
 dnt_grid = gtk.Grid()
 dnt_grid.add(autotime_l)
 dnt_grid.attach(autotime_l, 1, 1, 0, 0)
