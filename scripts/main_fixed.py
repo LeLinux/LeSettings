@@ -12,6 +12,7 @@ import scripts.menus.appearance_menu as am
 
 import scripts.menus.system.dateNtime as dnt
 
+import scripts.menus.connections.wifi as wifi
 from scripts.iconsNconst import *
 
 start_x = -1 * inc.win_w - 100
@@ -36,3 +37,6 @@ main_fixed.move(am.appear_menu, start_x, start_y)
 
 main_fixed.add(dnt.dnt_grid)
 main_fixed.move(dnt.dnt_grid, start_x, start_y)
+
+main_fixed.add(wifi.wifi)
+main_fixed.move(wifi.wifi, start_x, start_y)

@@ -6,7 +6,7 @@ from gi.repository import Gtk as gtk
 from scripts.iconsNconst import *
 import scripts.go2 as g2
 import scripts.button_settings as btns
-
+import scripts.lesetlib as lsl
 
 main_const, main_top_mar = get_consts(4)
 

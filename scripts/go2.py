@@ -57,6 +57,11 @@ def go2conns(btn):
     position = 2
     headbar.headb_fixed.move(headbar.back2menu, 0, 0)
 
+def go2wifi(btn):
+    global position
+    main_fixed.move(wifi.wifi, inc.win_w/4, inc.win_h*0.125)
+    main_fixed.move(conns_menu.conns_grid, hide_x, hide_y)
+
 def go2devices(btn):
     global position
     print("[LOG] GO2DEVICES function started")

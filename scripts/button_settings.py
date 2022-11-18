@@ -11,3 +11,6 @@ def set_button_data(btn, width, height, mar_top, mar_start, icon):
 	btn.set_property("height-request", height)
 	btn.set_margin_top(mar_top)
 	btn.set_margin_start(mar_start)
+
+def set_label_data():
+	pass
