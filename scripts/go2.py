@@ -3,7 +3,7 @@ gi.require_version("Gtk", "3.0")
 
 from scripts.iconsNconst import *
 from scripts.menus import main_menu, system_grid, headbar, conns_menu, devices_menu, appearance_menu
-from scripts.menus.system import dateNtime
+from scripts.menus.system import dateNtime, system_info
 from scripts.main_fixed import *
 
 """
@@ -42,6 +42,11 @@ def go2system(btn):
     headbar.headb_fixed.move(headbar.back2system, hide_x, hide_y)
     print("[LOG] GO2SYSTEM function finished")
 
+def go2sysinfo(btn):
+    global position
+    main_fixed.move(system_info.sysinfo_grid, 0, 0)
+    main_fixed.move(system_grid.sys_grid, hide_x, hide_y)
+
 def go2dateNtime(btn):
     global position
     main_fixed.move(dateNtime.dnt_grid, 0, 0)
@@ -59,8 +64,9 @@ def go2conns(btn):
 
 def go2wifi(btn):
     global position
-    main_fixed.move(wifi.wifi, inc.win_w/4, inc.win_h*0.125)
+    main_fixed.move(wifi.wifi, 0, 0)
     main_fixed.move(conns_menu.conns_grid, hide_x, hide_y)
+    position = 11
 
 def go2devices(btn):
     global position
@@ -86,16 +92,29 @@ def go2menu(btn):
     if position == 1:
         main_fixed.move(system_grid.sys_grid, hide_x, hide_y)
         print("[LOG] GO2MENU: system grid moved")
+        main_fixed.move(main_menu.main_menu, 0, 0)
+        headbar.headb_fixed.move(headbar.back2menu, -1 * inc.win_w, -1 * inc.win_h)
+        position = 0
     elif position == 2:
         main_fixed.move(conns_menu.conns_grid, hide_x, hide_y)
         print("[LOG] GO2MENU: connections grid moved")
+        main_fixed.move(main_menu.main_menu, 0, 0)
+        headbar.headb_fixed.move(headbar.back2menu, -1 * inc.win_w, -1 * inc.win_h)
+        position = 0
     elif position == 3:
         main_fixed.move(devices_menu.devices_menu, hide_x, hide_y)
         print("[LOG] GO2MENU: devices_menu moved")
+        main_fixed.move(main_menu.main_menu, 0, 0)
+        headbar.headb_fixed.move(headbar.back2menu, -1 * inc.win_w, -1 * inc.win_h)
+        position = 0
     elif position == 4:
         main_fixed.move(appearance_menu.appear_menu, hide_x, hide_y)
         print("[LOG] GO2MENU: appearance menu moved")
-    main_fixed.move(main_menu.main_menu, 0, 0)
-    headbar.headb_fixed.move(headbar.back2menu, -1 * inc.win_w, -1 * inc.win_h)
-    position = 0
+        main_fixed.move(main_menu.main_menu, 0, 0)
+        headbar.headb_fixed.move(headbar.back2menu, -1 * inc.win_w, -1 * inc.win_h)
+        position = 0
+    if position == 11:
+        main_fixed.move(wifi.wifi, hide_x, hide_y)
+        main_fixed.move(conns_menu.conns_grid, 0, 0)
+        position = 2
     print("[LOG] GO2MENU function finished. Current position = " + str(position))

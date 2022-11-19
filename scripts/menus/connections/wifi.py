@@ -26,4 +26,6 @@ for i in buttons:
 wifi = gtk.ScrolledWindow()
 wifi.set_property("width-request", inc.win_w/2)
 wifi.set_property("height-request", inc.win_h*0.75)
+wifi.set_margin_top(inc.win_h*0.75*0.15)
+wifi.set_margin_start(inc.win_w*0.25)
 wifi.add(box)
