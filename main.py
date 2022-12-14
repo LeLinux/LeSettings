@@ -16,7 +16,6 @@ class Main(gtk.Window):
 
         #IDK how it works. Magic
         style_provider = gtk.CssProvider()
-        print(1111)
         css_data = styles.style
         style_provider.load_from_data(css_data)
         gtk.StyleContext.add_provider_for_screen(
