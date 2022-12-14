@@ -6,6 +6,10 @@ gi.require_version("Gtk", "3.0")
 
 from gi.repository import Gtk as gtk
 
+import distro
+import os
+import cpuinfo
+
 #input
 #-----
 # mod: 0 - add num to Current volume level; 1 - set absolute volume lvl
@@ -77,3 +81,36 @@ class ConnectionWindow(gtk.Window):
 
 def connection_window(btn):#, ssid):
     win_wifi = ConnectionWindow()
+
+
+#output:
+# [
+# : distro name
+# : RAM
+# : CPU
+# : GPU
+# ]
+# COMMENT: PLS, dont ask how it works. IDK
+def get_sysinfo():
+    __datas__ = []
+    __datas__.append(distro.linux_distribution()[0]) #distro name
+    __datas__.append(str((os.sysconf('SC_PAGE_SIZE') * os.sysconf('SC_PHYS_PAGES'))/(1024.**3))[:5]) #RAM size
+    cpu = sb.check_output(["cat", "/proc/cpuinfo"]).decode("UTF-8").split("\n")
+    for i in cpu:
+        if "model name" in i:
+            __datas__.append(i.split(":")[1])
+            break
+    gpu = sb.check_output(["clinfo"]).decode("UTF-8").split("\n")
+    for i in gpu:
+        if "Device Name" in i:
+            spi = i.split(" ")
+            nos = 0
+            addable = ""
+            for j in spi:
+                if j == "":
+                    nos += 1
+                elif nos > 2:
+                    addable += j + " "
+            __datas__.append(addable)
+            break
+    return __datas__

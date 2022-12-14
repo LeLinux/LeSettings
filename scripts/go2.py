@@ -6,6 +6,8 @@ from scripts.menus import main_menu, system_grid, headbar, conns_menu, devices_m
 from scripts.menus.system import dateNtime, system_info
 from scripts.main_fixed import *
 
+import scripts.lesetlib as lsl
+
 """
     0 - main menu
     1 - system menu
@@ -36,7 +38,7 @@ def go2system(btn):
     elif position == 9:
         pass
     elif position == 10:
-        pass
+        main_fixed.move(system_info.sysinfo_grid, hide_x, hide_y)
     position = 1
     headbar.headb_fixed.move(headbar.back2menu, 0, 0)
     headbar.headb_fixed.move(headbar.back2system, hide_x, hide_y)
@@ -46,6 +48,15 @@ def go2sysinfo(btn):
     global position
     main_fixed.move(system_info.sysinfo_grid, 0, 0)
     main_fixed.move(system_grid.sys_grid, hide_x, hide_y)
+    headbar.headb_fixed.move(headbar.back2system, 0, 0)
+    headbar.headb_fixed.move(headbar.back2menu, hide_x, hide_y)
+    system_data = lsl.get_sysinfo()
+    system_info.os_name_l_data.set_text(system_data[0])
+    system_info.ram_l_data.set_text(system_data[1] + " GB")
+    system_info.cpu_l_data.set_text(system_data[2][:45])
+    system_info.gpu_l_data.set_text(system_data[3])
+
+    position = 10
 
 def go2dateNtime(btn):
     global position

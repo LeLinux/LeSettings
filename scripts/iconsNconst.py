@@ -5,11 +5,6 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk as gtk
 from gi.repository import GdkPixbuf
 
-#that IF-ELSE block do dynamic change of window size by use screen resolution
-
-
-
-
 class Datas:
     def __init__(self):
         self.win = get_monitors() #get monitors resolution
