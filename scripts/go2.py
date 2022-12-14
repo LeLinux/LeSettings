@@ -3,7 +3,7 @@ gi.require_version("Gtk", "3.0")
 
 from scripts.iconsNconst import *
 from scripts.menus import main_menu, system_grid, headbar, conns_menu, devices_menu, appearance_menu
-from scripts.menus.system import dateNtime, system_info
+from scripts.menus.system import dateNtime, system_info, langNreg
 from scripts.main_fixed import *
 
 import scripts.lesetlib as lsl
@@ -28,7 +28,7 @@ def go2system(btn):
     main_fixed.move(main_menu.main_menu, hide_x, hide_y)
     main_fixed.move(system_grid.sys_grid, 0, 0)
     if position == 5:
-        pass
+        main_fixed.move(lnr.lnr_grid, hide_x, hide_y)
     elif position == 6:
         main_fixed.move(dateNtime.dnt_grid, hide_x, hide_y)
     elif position == 7:
@@ -57,6 +57,14 @@ def go2sysinfo(btn):
     system_info.gpu_l_data.set_text(system_data[3])
 
     position = 10
+
+def go2langNreg(btn):
+    global position
+    main_fixed.move(system_grid.sys_grid, hide_x,  hide_y)
+    main_fixed.move(lnr.lnr_grid, 0, 0)
+    headbar.headb_fixed.move(headbar.back2system, 0, 0)
+    headbar.headb_fixed.move(headbar.back2menu, hide_x, hide_y)
+    position = 5
 
 def go2dateNtime(btn):
     global position

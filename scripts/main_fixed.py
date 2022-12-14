@@ -10,7 +10,7 @@ import scripts.menus.system_grid as sg
 import scripts.menus.devices_menu as dm
 import scripts.menus.appearance_menu as am
 import scripts.menus.system.system_info as ssi
-
+import scripts.menus.system.langNreg as lnr
 import scripts.menus.system.dateNtime as dnt
 
 import scripts.menus.connections.wifi as wifi
@@ -41,6 +41,9 @@ main_fixed.move(dnt.dnt_grid, start_x, start_y)
 
 main_fixed.add(wifi.wifi)
 main_fixed.move(wifi.wifi, start_x, start_y)
+
+main_fixed.add(lnr.lnr_grid)
+main_fixed.move(lnr.lnr_grid, start_x, start_y)
 
 main_fixed.add(ssi.sysinfo_grid)
 main_fixed.move(ssi.sysinfo_grid, start_x, start_y)

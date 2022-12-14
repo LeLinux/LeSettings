@@ -8,6 +8,7 @@ def btn_connect():
 	main_menu.system_b.connect("clicked", g2.go2system)
 	system_grid.dateNtime.connect("clicked", g2.go2dateNtime)
 	system_grid.sysinfo.connect("clicked", g2.go2sysinfo)
+	system_grid.langNreg.connect("clicked", g2.go2langNreg)
 
 	main_menu.conns_b.connect("clicked", g2.go2conns)
 	main_menu.devices_b.connect("clicked", g2.go2devices)

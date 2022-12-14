@@ -6,6 +6,9 @@ from gi.repository import Gtk as gtk
 from scripts.iconsNconst import *
 import scripts.go2 as g2
 
+mar_start = inc.main_const_def / 10
+mar_top = mar_start
+
 lang_l = gtk.Label("Language")
 lang_l.get_style_context().add_class("label")
 lang_l.set_xalign(0)
@@ -25,11 +28,11 @@ langs_selector = gtk.ComboBoxText()
 for i in lang_list:
     langs_selector.append_text(i)
 langs_selector.set_margin_start(mar_start)
-langs_selector.set_margin_top(mar_top)
+langs_selector.set_margin_top(inc.win_h/3.2)
 
 reg_list = ["Europe/Moscow", "USA/New-York"]
 reg_selector = gtk.ComboBoxText()
-for i in lang_list:
+for i in reg_list:
     reg_selector.append_text(i)
 reg_selector.set_margin_start(mar_start)
 reg_selector.set_margin_top(mar_top)
