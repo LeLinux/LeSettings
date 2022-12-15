@@ -29,7 +29,7 @@ font_format_selector = gtk.ComboBoxText()
 for i in fonts_formats:
     font_format_selector.append_text(i)
 font_format_selector.set_margin_start(mar_start)
-font_format_selector.set_margin_top(mar_top)
+font_format_selector.set_margin_top(inc.win_h / 3.1)
 
 font_grid = gtk.Grid()
 font_grid.add(font_l)

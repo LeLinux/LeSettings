@@ -145,6 +145,7 @@ def go2menu(btn):
         main_fixed.move(conns_menu.conns_grid, 0, 0)
         position = 2
     if position == 20:
-        main_fixed.move(font_grid.font_grid, hixe_x, hixe_y)
+        main_fixed.move(font_grid.font_grid, hide_x, hide_y)
         main_fixed.move(appearance_menu.appear_menu, 0, 0)
+        position = 4
     print("[LOG] GO2MENU function finished. Current position = " + str(position))
