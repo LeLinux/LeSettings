@@ -4,8 +4,10 @@ gi.require_version("Gtk", "3.0")
 from scripts.iconsNconst import *
 from scripts.menus import main_menu, system_grid, headbar, conns_menu, devices_menu, appearance_menu
 from scripts.menus.system import dateNtime, system_info, langNreg
+#import scripts.menus.system.sounds
 from scripts.menus.appearance import font_grid
 from scripts.main_fixed import *
+
 
 import scripts.lesetlib as lsl
 
@@ -33,7 +35,7 @@ def go2system(btn):
     elif position == 6:
         main_fixed.move(dateNtime.dnt_grid, hide_x, hide_y)
     elif position == 7:
-        pass
+        main_fixed.move(snds.sound_grid, hide_x, hide_y)
     elif position == 8:
         pass
     elif position == 9:
@@ -44,6 +46,14 @@ def go2system(btn):
     headbar.headb_fixed.move(headbar.back2menu, 0, 0)
     headbar.headb_fixed.move(headbar.back2system, hide_x, hide_y)
     print("[LOG] GO2SYSTEM function finished")
+
+def go2sound(btn):
+    global position
+    main_fixed.move(snds.sound_grid, 0, 0)
+    main_fixed.move(system_grid.sys_grid, hide_x, hide_y)
+    headbar.headb_fixed.move(headbar.back2system, 0, 0)
+    headbar.headb_fixed.move(headbar.back2menu, hide_x, hide_y)
+    position = 7
 
 def go2sysinfo(btn):
     global position
@@ -124,7 +134,7 @@ def go2menu(btn):
         position = 0
     elif position == 2:
         main_fixed.move(conns_menu.conns_grid, hide_x, hide_y)
-        print("[LOG] GO2MENU: connections grid moved")
+        print("[LOG] GO2MENU: connections grid momar_topved")
         main_fixed.move(main_menu.main_menu, 0, 0)
         headbar.headb_fixed.move(headbar.back2menu, -1 * inc.win_w, -1 * inc.win_h)
         position = 0

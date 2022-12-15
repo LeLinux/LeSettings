@@ -13,6 +13,7 @@ import scripts.menus.system.system_info as ssi
 import scripts.menus.system.langNreg as lnr
 import scripts.menus.system.dateNtime as dnt
 import scripts.menus.appearance.font_grid as fntg
+import scripts.menus.system.sounds as snds
 
 import scripts.menus.connections.wifi as wifi
 from scripts.iconsNconst import *
@@ -48,6 +49,9 @@ main_fixed.move(lnr.lnr_grid, start_x, start_y)
 
 main_fixed.add(fntg.font_grid)
 main_fixed.move(fntg.font_grid, start_x, start_y)
+
+main_fixed.add(snds.sound_grid)
+main_fixed.move(snds.sound_grid, start_x, start_y)
 
 main_fixed.add(ssi.sysinfo_grid)
 main_fixed.move(ssi.sysinfo_grid, start_x, start_y)
