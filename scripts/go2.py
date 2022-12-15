@@ -4,6 +4,7 @@ gi.require_version("Gtk", "3.0")
 from scripts.iconsNconst import *
 from scripts.menus import main_menu, system_grid, headbar, conns_menu, devices_menu, appearance_menu
 from scripts.menus.system import dateNtime, system_info, langNreg
+from scripts.menus.appearance import font_grid
 from scripts.main_fixed import *
 
 import scripts.lesetlib as lsl
@@ -105,6 +106,13 @@ def go2appear(btn):
     headbar.headb_fixed.move(headbar.back2menu, 0, 0)
     print("[LOG] GO2APPEAR function finished. Position = " + str(position))
 
+def go2fonts(btn):
+    global position
+    print("[LOG] GO2FONTS function started")
+    main_fixed.move(font_grid.font_grid, 0, 0)
+    main_fixed.move(appearance_menu.appear_menu, hide_x, hide_y)
+    position = 20
+
 def go2menu(btn):
     global position
     print("[LOG] GO2MENU function started")
@@ -136,4 +144,7 @@ def go2menu(btn):
         main_fixed.move(wifi.wifi, hide_x, hide_y)
         main_fixed.move(conns_menu.conns_grid, 0, 0)
         position = 2
+    if position == 20:
+        main_fixed.move(font_grid.font_grid, hixe_x, hixe_y)
+        main_fixed.move(appearance_menu.appear_menu, 0, 0)
     print("[LOG] GO2MENU function finished. Current position = " + str(position))
