@@ -10,6 +10,7 @@ import scripts.menus.headbar as hdb
 import scripts.main_fixed as mf
 import scripts.button_connect as btnc
 import scripts.styles.styles as styles
+import scripts.conhand as conhand
 
 class Main(gtk.Window):
     def __init__(self):
@@ -25,10 +26,11 @@ class Main(gtk.Window):
         )
         super().__init__()
         #=====
-
+        conhand.configurator()
         self.add(mf.main_fixed)
         self.set_titlebar(hdb.headb)
         btnc.btn_connect()
+
         self.show_all()
 
 win = Main()

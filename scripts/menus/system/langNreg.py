@@ -29,6 +29,7 @@ for i in lang_list:
     langs_selector.append_text(i)
 langs_selector.set_margin_start(mar_start)
 langs_selector.set_margin_top(inc.win_h/3.2)
+langs_selector.set_active(0)
 
 reg_list = ["Europe/Moscow", "USA/New-York"]
 reg_selector = gtk.ComboBoxText()

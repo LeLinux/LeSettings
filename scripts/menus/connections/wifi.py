@@ -17,6 +17,7 @@ for i in range(len(ssid_l)-2):
     btn_tmp.set_property("width-request", inc.win_w/2)
     btn_tmp.set_property("height-request", inc.win_h/12)
     btn_tmp.connect("clicked", lsl.connection_window)
+    btn_tmp.set_relief(gtk.ReliefStyle.HALF)
     buttons.append(btn_tmp)
 
 box = gtk.VBox()
