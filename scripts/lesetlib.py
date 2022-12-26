@@ -91,6 +91,7 @@ def connection_window(btn):#, ssid):
 # : GPU
 # ]
 # COMMENT: PLS, dont ask how it works. IDK
+#TODO on my laptop, with integrated GPU, dont work GPU finding. Fix it
 def get_sysinfo():
     __datas__ = []
     __datas__.append(distro.linux_distribution()[0]) #distro name

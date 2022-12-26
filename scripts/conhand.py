@@ -1,7 +1,5 @@
 def configurator():
     import scripts.menus.system.langNreg as langNreg
-    import scripts.menus.system.dateNtime as dateNtime
-    config_s = open("./scripts/config.conf", "r")
     config = config_s.read()
     config_s.close()
     print(config)
