@@ -37,8 +37,10 @@ for i in time_formats:
     time_format_selector.append_text(i)
 time_format_selector.set_margin_start(mar_start)
 time_format_selector.set_margin_top(mar_top)
+time_format_selector.set_margin_end(mar_start)
 
 autotime_switcher = gtk.Switch()
+autotime_switcher.set_margin_end(mar_start)
 autotime_switcher.set_margin_start(mar_start)
 autotime_switcher.set_margin_top(inc.win_h / 3.1)
 
@@ -58,6 +60,7 @@ date_l.set_margin_top(mar_top)
 
 autodate_switcher = gtk.Switch()
 autodate_switcher.set_margin_start(mar_start)
+autodate_switcher.set_margin_end(mar_start)
 autodate_switcher.set_margin_top(mar_top)
 
 spacer_l = gtk.Label(" ")

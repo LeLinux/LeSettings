@@ -10,7 +10,7 @@ import scripts.go2 as g2
 
 main_const, main_top_mar = get_consts(6)
 
-langNreg = gtk.Button(label = "Language & Region")
+langNreg = gtk.Button()
 btns.set_button_data(langNreg,
                     main_const,
                     main_const,
@@ -18,7 +18,7 @@ btns.set_button_data(langNreg,
                     main_const,
                     inc.langNreg_b_icon)
 
-dateNtime = gtk.Button(label = "  Date & Time")
+dateNtime = gtk.Button()
 btns.set_button_data(dateNtime,
                     main_const,
                     main_const,
@@ -26,7 +26,7 @@ btns.set_button_data(dateNtime,
                     main_const,
                     inc.dateNtime_b_icon)
 
-users_b = gtk.Button(label = "Users")
+users_b = gtk.Button()
 btns.set_button_data(users_b,
                     main_const,
                     main_const,

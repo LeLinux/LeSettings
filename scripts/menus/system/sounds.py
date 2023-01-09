@@ -76,8 +76,8 @@ dummy_b2.set_margin_top(inc.win_h / 20)
 
 test_b1 = gtk.Button(label="Test")
 test_b1.set_property("width-request", inc.main_const_def)
-test_b1.set_margin_start(mar_start)
-test_b1.set_margin_top(inc.win_h / 20)
+test_b1.set_margin_end(300)
+test_b1.set_margin_bottom(inc.win_h / 20)
 
 test_b2 = gtk.Button(label="Test")
 test_b2.set_property("width-request", inc.main_const_def)

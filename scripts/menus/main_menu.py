@@ -10,7 +10,7 @@ import scripts.button_settings as btns
 main_const, main_top_mar = get_consts(4)
 
 #main selector grid & components
-system_b = gtk.Button(label = "System")
+system_b = gtk.Button()
 btns.set_button_data(system_b,
                     main_const,
                     main_const,
@@ -19,7 +19,7 @@ btns.set_button_data(system_b,
                     inc.system_b_icon)
 
 
-conns_b = gtk.Button(label = "Connections")
+conns_b = gtk.Button()
 btns.set_button_data(conns_b,
                     main_const,
                     main_const,
@@ -27,7 +27,7 @@ btns.set_button_data(conns_b,
                     main_const,
                     inc.conns_b_icon)
 
-devices_b = gtk.Button(label = "Devices")
+devices_b = gtk.Button()
 btns.set_button_data(devices_b,
                     main_const,
                     main_const,
@@ -35,14 +35,14 @@ btns.set_button_data(devices_b,
                     main_const,
                     inc.devices_b_icon)
 
-appearance_b = gtk.Button(label = "Appearance")
+appearance_b = gtk.Button()
 btns.set_button_data(appearance_b,
                     main_const,
                     main_const,
                     main_top_mar,
                     main_const,
                     inc.appearance_b_icon)
-                    
+
 main_menu = gtk.Grid()
 main_menu.add(system_b)
 main_menu.attach(system_b, 1, 0, 2, 1)
