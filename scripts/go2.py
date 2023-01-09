@@ -3,11 +3,10 @@ gi.require_version("Gtk", "3.0")
 
 from scripts.iconsNconst import *
 from scripts.menus import main_menu, system_grid, headbar, conns_menu, devices_menu, appearance_menu
-from scripts.menus.system import dateNtime, system_info, langNreg
+from scripts.menus.system import dateNtime, system_info, langNreg, power
 #import scripts.menus.system.sounds
 from scripts.menus.appearance import font_grid
 from scripts.main_fixed import *
-
 
 import scripts.lesetlib as lsl
 
@@ -37,7 +36,8 @@ def go2system(btn):
     elif position == 7:
         main_fixed.move(snds.sound_grid, hide_x, hide_y)
     elif position == 8:
-        pass
+        main_fixed.move(power.power_grid, hide_x, hide_y)
+        
     elif position == 9:
         pass
     elif position == 10:
@@ -54,6 +54,15 @@ def go2sound(btn):
     headbar.headb_fixed.move(headbar.back2system, 0, 0)
     headbar.headb_fixed.move(headbar.back2menu, hide_x, hide_y)
     position = 7
+
+def go2power(btn):
+    global position
+    main_fixed.move(power.power_grid, 0, 0)
+    main_fixed.move(system_grid.sys_grid, hide_x, hide_y)
+    headbar.headb_fixed.move(headbar.back2system, 0, 0)
+    headbar.headb_fixed.move(headbar.back2menu, hide_x, hide_y)
+    position = 8
+
 
 def go2sysinfo(btn):
     global position

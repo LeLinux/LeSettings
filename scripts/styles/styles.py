@@ -1,5 +1,7 @@
 from scripts.iconsNconst import inc
 font_size = str(int(inc.win_w * 0.0159325))
+if int(font_size) < 17:
+    font_size = "17"
 
 stylef = """
     .button {
