@@ -16,6 +16,7 @@ def configurator():
     loc = []
     with open("scripts/localization/" + langs[config["system"]["langNreg"]["language"]], "r",  encoding = "UTF-8") as locale:
         loc = json.load(locale)
+    print(loc)
     #main menu
     main_menu.system_b.set_label(loc["system"]["name"])
     main_menu.conns_b.set_label(loc["connections"]["name"])
