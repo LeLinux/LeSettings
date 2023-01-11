@@ -22,6 +22,7 @@ def change_volume_level(mod, num):
     else:
         mixer.setvolume(num)
 
+
 #input
 #-----
 # display: display identificator
@@ -79,6 +80,8 @@ class ConnectionWindow(gtk.Window):
         self.add(self.auth_grid)
         self.show_all()
 
+    def connect2wifi(self, pwd):
+        pass
 def connection_window(btn):#, ssid):
     win_wifi = ConnectionWindow()
 
@@ -114,4 +117,7 @@ def get_sysinfo():
                     addable += j + " "
             __datas__.append(addable)
             break
+    print(len(gpu))
+    if len(__datas__) < 4:
+        __datas__.append("None")
     return __datas__

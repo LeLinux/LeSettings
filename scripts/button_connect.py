@@ -17,4 +17,4 @@ def btn_connect():
 	main_menu.devices_b.connect("clicked", g2.go2devices)
 	main_menu.appearance_b.connect("clicked", g2.go2appear)
 	conns_menu.wifi_b.connect("clicked", g2.go2wifi)
-    system_grid.power_b.connect("clicked", g2.go2power)
+	system_grid.power_b.connect("clicked", g2.go2power)
