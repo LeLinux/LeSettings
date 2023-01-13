@@ -12,7 +12,7 @@ autotime_l = gtk.Label("Automatic set time")
 autotime_l.get_style_context().add_class("label")
 autotime_l.set_xalign(0)
 autotime_l.set_property("width-request", inc.main_const_def)
-autotime_l.set_margin_start(mar_start)
+autotime_l.set_margin_start(inc.win_w / 4)
 autotime_l.set_margin_top(inc.win_h / 3.1)
 
 time_l = gtk.Label("Time")
@@ -35,20 +35,18 @@ time_formats = ["24-hour", "AM/PM"]
 time_format_selector = gtk.ComboBoxText()
 for i in time_formats:
     time_format_selector.append_text(i)
-time_format_selector.set_margin_start(mar_start)
+time_format_selector.set_margin_start(mar_start / 2)
 time_format_selector.set_margin_top(mar_top)
-time_format_selector.set_margin_end(mar_start)
 
 autotime_switcher = gtk.Switch()
-autotime_switcher.set_margin_end(mar_start)
-autotime_switcher.set_margin_start(mar_start)
+autotime_switcher.set_margin_start(mar_start / 1.55)
 autotime_switcher.set_margin_top(inc.win_h / 3.1)
 
 autodate_l = gtk.Label("Automatic set date")
 autodate_l.get_style_context().add_class("label")
 autodate_l.set_xalign(0)
 autodate_l.set_property("width-request", inc.main_const_def)
-autodate_l.set_margin_start(mar_start)
+autodate_l.set_margin_start(inc.win_w / 4)
 autodate_l.set_margin_top(mar_top)
 
 date_l = gtk.Label("Date")
@@ -59,8 +57,7 @@ date_l.set_margin_start(mar_start)
 date_l.set_margin_top(mar_top)
 
 autodate_switcher = gtk.Switch()
-autodate_switcher.set_margin_start(mar_start)
-autodate_switcher.set_margin_end(mar_start)
+autodate_switcher.set_margin_start(217)
 autodate_switcher.set_margin_top(mar_top)
 
 spacer_l = gtk.Label(" ")

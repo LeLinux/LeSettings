@@ -5,8 +5,13 @@ from gi.repository import Gtk as gtk
 
 from scripts.iconsNconst import *
 import scripts.go2 as g2
+import os
+
 
 mar_top, mar_start = 20, 20
+
+def change_volume(scale, *args):
+    os.popen("pactl set-sink-volume 0 " + str(int(scale.get_value())) + "%")
 
 volume_l = gtk.Label("System volume")
 volume_l.get_style_context().add_class("label")
@@ -55,6 +60,7 @@ volume_scale.set_hexpand(True)
 volume_scale.set_draw_value(0)
 volume_scale.set_margin_start(inc.win_w / 6)
 volume_scale.set_margin_top(inc.win_h / 4)
+volume_scale.connect("change_value", change_volume)
 
 balance_s1 = gtk.HScale(adjustment=adjustment2)
 balance_s1.set_value_pos(gtk.PositionType.BOTTOM)

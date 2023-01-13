@@ -87,7 +87,76 @@ locale = {
 
 }
 """
-locale = {'system': {'name': 'Система', 'langNreg': {'name': ' Язык и\nрегион', 'language': 'Язык', 'region': 'Регион'}, 'dateNtime': {'name': 'Дата и\nвремя', 'auto_set_time': 'Автоматически устанавливать время', 'time': 'Время', 'time_format': 'Формат времени', 'auto_set_date': 'Автоматически устанавливать дату', 'date': 'Дата'}, 'users': {'name': 'Юзеры'}, 'sysinfo': {'name': ' Системные\n   сведения'}, 'sounds': {'name': 'Звук'}, 'power': {'name': 'Питание'}}, 'connections': {'name': 'Подключения', 'wifi': {'name': 'wifi'}}, 'devices': {'name': 'Устройства', 'displays': {'name': 'Мониторы'}, 'keyboard': {'name': 'Клавиатура'}, 'mouse': {'name': 'Мышь'}, 'printers': {'name': 'Принтеры'}}, 'appearance': {'name': 'Внешний вид', 'multitask': {'name': 'Мультизадачность'}, 'themes': {'name': 'Темы оформления'}, 'fonts': {'name': 'Шрифты'}, 'desktop': {'name': 'Рабочий стол'}}}
+
+"""
+значиние отступа - число на которое необходимо разделить  win_h
+"""
+locale = {
+        'system': {
+            'name': 'Система',
+            'langNreg': {
+                'name': ' Язык и\nрегион',
+                'language': 'Язык',
+                'region': 'Регион'
+            },
+            'dateNtime': {
+                'name': 'Дата и\nвремя',
+                'auto_set_time': 'Автоматически устанавливать время',
+                'time': 'Время',
+                'time_format': 'Формат времени',
+                'auto_set_date': 'Автоматически устанавливать дату',
+                'date': 'Дата',
+            },
+            'users': {
+                'name': 'Юзеры'
+            },
+            'sysinfo': {
+                'name': ' Системные\n   сведения'
+            },
+            'sounds': {
+                'name': 'Звук'
+            },
+            'power': {
+                'name': 'Питание'
+            }
+        },
+        'connections': {
+            'name': 'Подключения',
+            'wifi': {
+                'name': 'wifi'
+            }
+        },
+        'devices': {
+            'name': 'Устройства',
+            'displays': {
+                'name': 'Мониторы'
+            },
+            'keyboard': {
+                'name': 'Клавиатура'
+            },
+            'mouse': {
+                'name': 'Мышь'
+            },
+            'printers': {
+                'name': 'Принтеры'
+                }
+            },
+            'appearance': {
+                'name': 'Внешний вид',
+                'multitask': {
+                    'name': 'Мультизадачность'
+                },
+                'themes': {
+                    'name': 'Темы оформления'
+                },
+                'fonts': {
+                    'name': 'Шрифты'
+                },
+                'desktop': {
+                    'name': 'Рабочий стол'
+                }
+            }
+        }
 
 with open("ru.json", "w", encoding = "UTF-8") as write_file:
     json.dump(locale, write_file)
