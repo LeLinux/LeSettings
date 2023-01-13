@@ -1,1 +1,1 @@
-{system: {langNreg: {language: 0, region: 0}, dateNtime: {auto_set_time: 1, time_format: 0, auto_set_date: 1}}, devices: {displays: {}, keyboard: {}, mouse: {}, printers: {}}, appearance: {multitask: {}, themes: {}, fonts: {}, desktop: {}}}
+{system: {langNreg: {language: 1, region: 0}, dateNtime: {auto_set_time: 1, time_format: 0, auto_set_date: 1}}, devices: {displays: {}, keyboard: {}, mouse: {}, printers: {}}, appearance: {multitask: {}, themes: {}, fonts: {}, desktop: {}}}
