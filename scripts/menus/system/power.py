@@ -2,7 +2,7 @@ import gi
 gi.require_version("Gtk", "3.0")
 
 from gi.repository import Gtk as gtk
-
+import os
 from scripts.iconsNconst import *
 import scripts.go2 as g2
 
@@ -29,6 +29,9 @@ battery_l.set_property("width-request", inc.main_const_def)
 battery_l.set_margin_start(mar_start)
 battery_l.set_margin_top(inc.win_h / 20)
 
+def change_brightness(scale, *args):
+    os.popen("xbacklight -set " + str(int(scale.get_value())))
+
 value = 50
 adjustment = gtk.Adjustment(value, 0, 100, 1, 10, 0)
 
@@ -38,6 +41,7 @@ display_scale.set_vexpand(True)
 display_scale.set_hexpand(True)
 display_scale.set_draw_value(0)
 display_scale.set_margin_top(inc.win_h / 5)
+display_scale.connect("change_value", change_brightness)
 
 energy_switcher = gtk.Switch()
 energy_switcher.set_margin_start(mar_start)

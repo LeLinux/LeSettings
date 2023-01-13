@@ -21,25 +21,27 @@ buttons = []
 for i in range(len(layoutslist)):
     btn_tmp = gtk.Button(label = layoutslist[i])
     btn_tmp.set_property("width-request", inc.win_w/2)
-    btn_tmp.set_property("height-request", inc.win_h/10)
+    btn_tmp.set_property("height-request", inc.win_h/15)
     btn_tmp.set_relief(gtk.ReliefStyle.NONE)
     buttons.append(btn_tmp)
 
 box = gtk.VBox()
+print(buttons)
 for i in buttons:
     box.pack_start(i, 0, 0, 0)
 
 layouts = gtk.ScrolledWindow()
 layouts.set_property("width-request", inc.win_w/2)
-layouts.set_property("height-request", inc.win_h*0.75)
+layouts.set_property("height-request", inc.win_h/5)
 layouts.set_margin_top(inc.win_h/20)
 layouts.set_margin_start(inc.win_w/4.2)
 layouts.add(box)
 
 shortcuts_b = gtk.Button(label="Shortuts")
 shortcuts_b.set_property("width-request", inc.main_const_def)
+shortcuts_b.set_property("height-request", inc.win_h/15)
 shortcuts_b.set_margin_start(mar_start)
-shortcuts_b.set_margin_top(inc.win_h/10)
+shortcuts_b.set_margin_top(inc.win_h/20)
 
 keyboard_grid = gtk.Grid()
 keyboard_grid.add(languages_l)

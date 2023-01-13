@@ -30,6 +30,8 @@ time_format.set_xalign(0)
 time_format.set_margin_start(mar_start)
 time_format.set_margin_top(mar_top)
 
+
+
 time_formats = ["24-hour", "AM/PM"]
 
 time_format_selector = gtk.ComboBoxText()
