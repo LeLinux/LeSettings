@@ -178,4 +178,5 @@ def go2menu(btn):
     if position == 15:
         main_fixed.move(devices_menu.devices_menu, 0, 0)
         main_fixed.move(keyboard.keyboard_grid, hide_x, hide_y)
+        position = 3
     print("[LOG] GO2MENU function finished. Current position = " + str(position))
