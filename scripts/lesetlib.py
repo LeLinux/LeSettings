@@ -89,9 +89,9 @@ class ConnectionWindow(gtk.Window):
         import time
         global wifi_ssid
         print(self.pwd_entry.get_text())
-        os.popen("nmcli dev wifi connect " + wifi_ssid + " " + self.pwd_entry.get_text())
+        os.popen("nmcli dev wifi connect '" + wifi_ssid.rstrip() + "' password '" + self.pwd_entry.get_text() + "'")
         time.sleep(5)
-        #self.destroy()
+        self.destroy()
 
 
 def connection_window(btn):
