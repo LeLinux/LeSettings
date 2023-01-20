@@ -42,6 +42,8 @@ class Datas:
         #System menu PIXBUF-s
         self.pixbuf_langNreg_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename="/usr/share/icons/candy-icons/preferences/scalable/config-language.svg", width = self.icon_size_def* 0.77, height = self.icon_size_def * 0.77, preserve_aspect_ratio = 1)
 
+        self.pixbuf_default_user_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename="/usr/share/icons/candy-icons/preferences/scalable/preferences-desktop-user.svg", width = self.icon_size_def* 0.5, height = self.icon_size_def * 0.5, preserve_aspect_ratio = 1)
+
         self.pixbuf_dateNtime_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename="/usr/share/icons/candy-icons/apps/scalable/clock.svg", width = self.icon_size_def * 0.77, height = self.icon_size_def * 0.77, preserve_aspect_ratio = 1)
 
         self.pixbuf_users_b_icon = GdkPixbuf.Pixbuf.new_from_file_at_scale(filename="/usr/share/icons/candy-icons/preferences/scalable/preferences-system-users.svg", width = self.icon_size_def* 0.77, height = self.icon_size_def* 0.77, preserve_aspect_ratio = 1)
@@ -84,6 +86,7 @@ class Datas:
         self.sysinfo_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_sysinfo_b_icon)
         self.sound_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_sound_b_icon)
         self.power_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_power_b_icon)
+        self.default_user_icon = gtk.Image.new_from_pixbuf(self.pixbuf_default_user_icon)
 
         #connections menu icons
         self.wifi_b_icon = gtk.Image.new_from_pixbuf(self.pixbuf_wifi_b_icon)
