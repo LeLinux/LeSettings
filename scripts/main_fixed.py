@@ -13,6 +13,7 @@ import scripts.menus.system.system_info as ssi
 import scripts.menus.system.langNreg as lnr
 import scripts.menus.system.dateNtime as dnt
 import scripts.menus.appearance.font_grid as fntg
+import scripts.menus.appearance.themes as thm
 import scripts.menus.system.sounds as snds
 import scripts.menus.system.power as pwr
 import scripts.menus.devices.keyboard as kbd
@@ -34,6 +35,9 @@ main_fixed.move(mm.main_menu, 0, 0)
 
 main_fixed.add(sg.sys_grid)
 main_fixed.move(sg.sys_grid, start_x, start_y)
+
+main_fixed.add(thm.themes_grid)
+main_fixed.move(thm.themes_grid, start_x, start_y)
 
 main_fixed.add(cnm.conns_grid)
 main_fixed.move(cnm.conns_grid, start_x, start_y)

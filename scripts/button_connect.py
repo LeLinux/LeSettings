@@ -12,6 +12,7 @@ def btn_connect():
 	system_grid.sound_b.connect("clicked", g2.go2sound)
 
 	appearance_menu.fonts_b.connect("clicked", g2.go2fonts)
+	appearance_menu.themes_b.connect("clicked", g2.go2themes)
 
 	main_menu.conns_b.connect("clicked", g2.go2conns)
 	main_menu.devices_b.connect("clicked", g2.go2devices)

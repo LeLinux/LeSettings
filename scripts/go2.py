@@ -5,7 +5,7 @@ from scripts.iconsNconst import *
 from scripts.menus import main_menu, system_grid, headbar, conns_menu, devices_menu, appearance_menu
 from scripts.menus.system import dateNtime, system_info, langNreg, power
 #import scripts.menus.system.sounds
-from scripts.menus.appearance import font_grid
+from scripts.menus.appearance import font_grid, themes
 from scripts.menus.devices import keyboard, mouse
 from scripts.main_fixed import *
 
@@ -146,6 +146,12 @@ def go2mouse(btn):
     main_fixed.move(mouse.mouse_grid, 0, 0)
     position = 16
 
+def go2themes(btn):
+    global position
+    main_fixed.move(appearance_menu.appear_menu, hide_x, hide_y)
+    main_fixed.move(themes.themes_grid, 0, 0)
+    position = 17
+
 def go2menu(btn):
     global position
     print("[LOG] GO2MENU function started")
@@ -189,4 +195,8 @@ def go2menu(btn):
         main_fixed.move(devices_menu.devices_menu, 0, 0)
         main_fixed.move(mouse.mouse_grid, hide_x, hide_y)
         position = 3
+    if position == 17:
+        main_fixed.move(appearance_menu.appear_menu, 0, 0)
+        main_fixed.move(themes.themes_grid, hide_x, hide_y)
+        position = 4
     print("[LOG] GO2MENU function finished. Current position = " + str(position))
