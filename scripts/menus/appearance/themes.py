@@ -12,7 +12,7 @@ themes_l = gtk.Label("Themes")
 themes_l.get_style_context().add_class("label")
 themes_l.set_xalign(0)
 themes_l.set_property("width-request", inc.main_const_def)
-themes_l.set_margin_start(inc.win_w/ 2.5)
+themes_l.set_margin_start(inc.win_w/ 2.24)
 themes_l.set_margin_top(inc.win_h / 4)
 
 themeslist = ["T1", "T2", "T3", "T4"]
@@ -32,7 +32,7 @@ for i in buttons:
 
 themes = gtk.ScrolledWindow()
 themes.set_property("width-request", inc.win_w/2)
-themes.set_property("height-request", inc.win_h/2)
+themes.set_property("height-request", inc.win_h/3.5)
 themes.set_margin_top(inc.win_h/20)
 themes.set_margin_start(inc.win_w/4.2)
 themes.add(box)
