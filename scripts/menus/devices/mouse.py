@@ -23,7 +23,7 @@ active_l.set_margin_start(mar_start)
 active_l.set_margin_top(inc.win_h / 20)
 
 value = 50
-adjustment1 = gtk.Adjustment(value, 0, 100, 1, 50, 0)
+adjustment1 = gtk.Adjustment(value, 0, 100, 1, 10, 0)
 
 sensativity_scale = gtk.HScale(adjustment=adjustment1)
 sensativity_scale.set_value_pos(gtk.PositionType.BOTTOM)
@@ -41,6 +41,7 @@ for i in active_formats:
     active_selector.append_text(i)
 active_selector.set_margin_start(mar_start)
 active_selector.set_margin_top(mar_top)
+active_selector.set_active(0)
 
 mouse_grid = gtk.Grid()
 mouse_grid.add(sensativity_l)
