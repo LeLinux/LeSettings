@@ -33,15 +33,18 @@ def change_volume_level(mod, num):
 def change_display(display, widht, height, rotate, position):
     pass
 
+wifi_l_ssids = []
+
 def get_wifi_list_ssid():
-    ssid_l = sb.check_output(["timeout", "5s", "nmcli", "-f", "SSID", "dev", "wifi"]).decode("utf-8").split("\n")[1:]
-    return ssid_l
+    global wifi_l_ssids
+    wifi_l_ssids = sb.check_output(["timeout", "5s", "nmcli", "-f", "SSID", "dev", "wifi"]).decode("utf-8").split("\n")[1:]
 
 wifi_ssid = "WIFI SSID. TODO"
 
 class ConnectionWindow(gtk.Window):
     def __init__(self):
         global wifi_ssid
+        global wifi_l_ssids
         super().__init__()
         self.set_default_size(inc.win_w/3 - inc.win_h/25, inc.win_h/6)
         self.set_resizable(0)
@@ -49,7 +52,8 @@ class ConnectionWindow(gtk.Window):
 
         self.wifi_l = gtk.Label(wifi_ssid)
         self.wifi_l.get_style_context().add_class("label")
-        self.wifi_l.set_property("width-request", inc.win_w/3 - inc.win_w/10)
+        self.wifi_l.set_xalign(0)
+        #self.wifi_l.set_property("width-request", inc.win_w/3 - inc.win_w/10)
         self.wifi_l.set_property("height-request", inc.win_h/40)
         self.wifi_l.set_margin_top(inc.win_w/30)
         self.wifi_l.set_margin_start(inc.win_w/30)
@@ -70,6 +74,7 @@ class ConnectionWindow(gtk.Window):
         self.btn_cnnt.set_margin_top(inc.win_h/50)
         self.btn_cnnt.set_margin_bottom(inc.win_w/30)
         self.btn_cnnt.set_margin_start(inc.win_w/30)
+        self.btn_cnnt.connect("clicked", self.connect2wifi)
 
         self.auth_grid = gtk.Grid()
         self.auth_grid.add(self.wifi_l)
@@ -81,9 +86,21 @@ class ConnectionWindow(gtk.Window):
         self.show_all()
 
     def connect2wifi(self, pwd):
-        pass
-def connection_window(btn):#, ssid):
+        import time
+        global wifi_ssid
+        print(self.pwd_entry.get_text())
+        os.popen("nmcli dev wifi connect " + wifi_ssid + " " + self.pwd_entry.get_text())
+        time.sleep(5)
+        #self.destroy()
+
+
+def connection_window(btn):
+    #print(ssid)
+    print(btn.get_label())
+    global wifi_ssid
+    wifi_ssid = btn.get_label()
     win_wifi = ConnectionWindow()
+
 
 
 #output:

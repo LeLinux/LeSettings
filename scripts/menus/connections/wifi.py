@@ -8,15 +8,18 @@ import scripts.go2 as g2
 import scripts.button_settings as btns
 import scripts.lesetlib as lsl
 
-ssid_l = lsl.get_wifi_list_ssid()
+lsl.get_wifi_list_ssid()
+ssid_l = lsl.wifi_l_ssids
 
 buttons = []
+c_ssid = ""
 
 for i in range(len(ssid_l)-2):
     btn_tmp = gtk.Button(label = ssid_l[i])
     btn_tmp.set_property("width-request", inc.win_w/2)
     btn_tmp.set_property("height-request", inc.win_h/12)
-    btn_tmp.connect("clicked", lsl.connection_window)
+    c_ssid = ssid_l[i]
+    btn_tmp.connect("clicked", lsl.connection_window )
     btn_tmp.set_relief(gtk.ReliefStyle.NONE)
     buttons.append(btn_tmp)
 

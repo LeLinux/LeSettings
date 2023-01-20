@@ -20,3 +20,4 @@ def btn_connect():
 	system_grid.power_b.connect("clicked", g2.go2power)
 
 	devices_menu.keyboard_b.connect("clicked", g2.go2keyboard)
+	devices_menu.mouse_b.connect("clicked", g2.go2mouse)

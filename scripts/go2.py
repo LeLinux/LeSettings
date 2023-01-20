@@ -6,7 +6,7 @@ from scripts.menus import main_menu, system_grid, headbar, conns_menu, devices_m
 from scripts.menus.system import dateNtime, system_info, langNreg, power
 #import scripts.menus.system.sounds
 from scripts.menus.appearance import font_grid
-from scripts.menus.devices import keyboard
+from scripts.menus.devices import keyboard, mouse
 from scripts.main_fixed import *
 
 import scripts.lesetlib as lsl
@@ -140,6 +140,12 @@ def go2fonts(btn):
     main_fixed.move(appearance_menu.appear_menu, hide_x, hide_y)
     position = 20
 
+def go2mouse(btn):
+    global position
+    main_fixed.move(devices_menu.devices_menu, hide_x, hide_y)
+    main_fixed.move(mouse.mouse_grid, 0, 0)
+    position = 16
+
 def go2menu(btn):
     global position
     print("[LOG] GO2MENU function started")
@@ -178,5 +184,9 @@ def go2menu(btn):
     if position == 15:
         main_fixed.move(devices_menu.devices_menu, 0, 0)
         main_fixed.move(keyboard.keyboard_grid, hide_x, hide_y)
+        position = 3
+    if position == 16:
+        main_fixed.move(devices_menu.devices_menu, 0, 0)
+        main_fixed.move(mouse.mouse_grid, hide_x, hide_y)
         position = 3
     print("[LOG] GO2MENU function finished. Current position = " + str(position))
