@@ -13,6 +13,7 @@ def btn_connect():
 
 	appearance_menu.fonts_b.connect("clicked", g2.go2fonts)
 	appearance_menu.themes_b.connect("clicked", g2.go2themes)
+	appearance_menu.desktop_b.connect("clicked", g2.go2desktop)
 
 	main_menu.conns_b.connect("clicked", g2.go2conns)
 	main_menu.devices_b.connect("clicked", g2.go2devices)

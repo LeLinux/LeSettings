@@ -3,13 +3,17 @@ gi.require_version("Gtk", "3.0")
 
 from gi.repository import Gtk as gtk
 
+
+import cairo
 from scripts.iconsNconst import *
 import scripts.go2 as g2
 import math
 
+darea = gtk.DrawingArea()
 
 def expose(widget, event):
-      cr = widget.window.cairo_create()
+      global darea
+      cr = cairo.Context(darea)#widget.window.cairo_create()
 		
       cr.set_line_width(2)
       cr.set_source_rgb(0,0,1)
@@ -42,5 +46,4 @@ def expose(widget, event):
       cr.line_to(400,240)
       cr.stroke()
 
-darea = gtk.DrawingArea()
-darea.connect("expose-event", expose)
+darea.connect("draw", expose)
