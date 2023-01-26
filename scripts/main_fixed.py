@@ -32,8 +32,8 @@ main_fixed = gtk.Fixed()
 main_fixed.add(mse.mouse_grid)
 main_fixed.move(mse.mouse_grid, start_x, start_x)
 
-main_fixed.add(dsk.darea)
-main_fixed.move(dsk.darea, start_x, start_y)
+main_fixed.add(dsk.desktop_fixed)
+main_fixed.move(dsk.desktop_fixed, start_x, start_y)
 
 main_fixed.add(mm.main_menu)
 main_fixed.move(mm.main_menu, 0, 0)

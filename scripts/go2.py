@@ -155,7 +155,7 @@ def go2themes(btn):
 def go2desktop(btn):
     global position
     main_fixed.move(appearance_menu.appear_menu, hide_x, hide_y)
-    main_fixed.move(desktop.darea, 0, 0)
+    main_fixed.move(desktop.desktop_fixed, 0, 0)
 
 def go2menu(btn):
     global position

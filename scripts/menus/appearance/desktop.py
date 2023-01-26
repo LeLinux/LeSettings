@@ -2,48 +2,39 @@ import gi
 gi.require_version("Gtk", "3.0")
 
 from gi.repository import Gtk as gtk
+from gi.repository import Gdk as gdk
 
-
-import cairo
 from scripts.iconsNconst import *
 import scripts.go2 as g2
-import math
 
-darea = gtk.DrawingArea()
 
-def expose(widget, event):
-      global darea
-      cr = cairo.Context(darea)#widget.window.cairo_create()
-		
-      cr.set_line_width(2)
-      cr.set_source_rgb(0,0,1)
-      cr.rectangle(10,10,100,100)
-      cr.stroke()
-		
-      cr.set_source_rgb(1,0,0)
-      cr.rectangle(10,125,100,100)
-      cr.stroke()
-		
-      cr.set_source_rgb(0,1,0)
-      cr.rectangle(125,10,100,100)
-      cr.fill()
-		
-      cr.set_source_rgb(0.5,0.6,0.7)
-      cr.rectangle(125,125,100,100)
-      cr.fill()
-		
-      cr.arc(300, 50, 50,0, 2*math.pi)
-      cr.set_source_rgb(0.2,0.2,0.2)
-      cr.fill()
-		
-      cr.arc(300, 200, 50, math.pi,0)
-      cr.set_source_rgb(0.1,0.1,0.1)
-      cr.stroke()
-		
-      cr.move_to(50,240)
-      cr.show_text("Hello PyGTK")
-      cr.move_to(150,240)
-      cr.line_to(400,240)
-      cr.stroke()
+desktop_fixed = gtk.Fixed()
 
-darea.connect("draw", expose)
+backgroud_cbtn = gtk.ColorButton()
+backgroud_cbtn.set_color(gdk.Color(6682, 7453, 11051))
+backgroud_cbtn.set_sensitive(0)
+backgroud_cbtn.set_property("width-request", inc.win_w / 2)
+backgroud_cbtn.set_property("height-request", inc.win_h / 2)
+
+polybar_cbtn = gtk.ColorButton()
+polybar_cbtn.set_color(gdk.Color(6682, 60000, 11051))
+polybar_cbtn.set_sensitive(0)
+polybar_cbtn.set_property("width-request", inc.win_w / 2)
+polybar_cbtn.set_property("height-request", inc.win_h / 16)
+
+
+plank_cbt = gtk.ColorButton()
+plank_cbt.set_color(gdk.Color(7000, 50000, 30000))
+plank_cbt.set_sensitive(0)
+plank_cbt.set_property("width-request", inc.win_w / 4)
+plank_cbt.set_property("height-request", inc.win_h / 16)
+
+
+desktop_fixed.add(backgroud_cbtn)
+desktop_fixed.move(backgroud_cbtn, inc.win_w / 8, inc.win_h / 8)
+
+desktop_fixed.add(polybar_cbtn)
+desktop_fixed.move(polybar_cbtn, inc.win_w / 8, inc.win_h / 8)
+
+desktop_fixed.add(plank_cbt)
+desktop_fixed.move(plank_cbt, inc.win_w / 4, inc.win_h / 1.8)
