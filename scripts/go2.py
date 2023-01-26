@@ -156,6 +156,7 @@ def go2desktop(btn):
     global position
     main_fixed.move(appearance_menu.appear_menu, hide_x, hide_y)
     main_fixed.move(desktop.desktop_fixed, 0, 0)
+    position = 18
 
 def go2menu(btn):
     global position
@@ -203,5 +204,9 @@ def go2menu(btn):
     if position == 17:
         main_fixed.move(appearance_menu.appear_menu, 0, 0)
         main_fixed.move(themes.themes_grid, hide_x, hide_y)
+        position = 4
+    if position == 18:
+        main_fixed.move(appearance_menu.appear_menu, 0, 0)
+        main_fixed.move(desktop.desktop_fixed, hide_x, hide_y)
         position = 4
     print("[LOG] GO2MENU function finished. Current position = " + str(position))
