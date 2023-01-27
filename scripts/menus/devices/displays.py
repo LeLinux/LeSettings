@@ -27,6 +27,7 @@ rotate_l.set_xalign(0)
 rotate_l.set_property("width-request", inc.main_const_def)
 
 display_formats = []
+
 import screeninfo
 displays = screeninfo.get_monitors()
 for i in displays:

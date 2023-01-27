@@ -3,7 +3,7 @@ gi.require_version("Gtk", "3.0")
 
 from scripts.iconsNconst import *
 from scripts.menus import main_menu, system_grid, headbar, conns_menu, devices_menu, appearance_menu
-from scripts.menus.system import dateNtime, system_info, langNreg, power
+from scripts.menus.system import dateNtime, system_info, langNreg, power, users
 #import scripts.menus.system.sounds
 from scripts.menus.appearance import font_grid, themes, desktop
 from scripts.menus.devices import keyboard, mouse, displays
@@ -164,6 +164,13 @@ def go2displays(btn):
     main_fixed.move(devices_menu.devices_menu, hide_x, hide_y)
     position = 19
 
+def go2users(btn):
+    global position
+    main_fixed.move(users.user_grid, 0, 0)
+    main_fixed.move(system_grid.sys_grid, hide_x, hide_y)
+    position = 21
+
+
 def go2menu(btn):
     global position
     print("[LOG] GO2MENU function started")
@@ -219,4 +226,8 @@ def go2menu(btn):
         main_fixed.move(displays.displays_fixed, hide_x, hide_y)
         main_fixed.move(devices_menu.devices_menu, 0, 0)
         position = 3
+    if position == 21:
+        main_fixed.move(users.user_grid, hide_x, hide_y)
+        main_fixed.move(system_grid.sys_grid, 0, 0)
+        position = 1
     print("[LOG] GO2MENU function finished. Current position = " + str(position))

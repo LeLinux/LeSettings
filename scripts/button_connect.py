@@ -10,6 +10,8 @@ def btn_connect():
 	system_grid.sysinfo.connect("clicked", g2.go2sysinfo)
 	system_grid.langNreg.connect("clicked", g2.go2langNreg)
 	system_grid.sound_b.connect("clicked", g2.go2sound)
+	system_grid.users_b.connect("clicked", g2.go2users)
+
 
 	appearance_menu.fonts_b.connect("clicked", g2.go2fonts)
 	appearance_menu.themes_b.connect("clicked", g2.go2themes)

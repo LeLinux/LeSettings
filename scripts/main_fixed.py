@@ -12,6 +12,7 @@ import scripts.menus.appearance_menu as am
 import scripts.menus.system.system_info as ssi
 import scripts.menus.system.langNreg as lnr
 import scripts.menus.system.dateNtime as dnt
+import scripts.menus.system.users as usrs
 import scripts.menus.appearance.font_grid as fntg
 import scripts.menus.appearance.themes as thm
 import scripts.menus.system.sounds as snds
@@ -33,6 +34,8 @@ main_fixed = gtk.Fixed()
 main_fixed.add(dsp.displays_fixed)
 main_fixed.move(dsp.displays_fixed, start_x, start_y)
 
+main_fixed.add(usrs.user_grid)
+main_fixed.move(usrs.user_grid, start_x, start_y)
 
 main_fixed.add(mse.mouse_grid)
 main_fixed.move(mse.mouse_grid, start_x, start_y)
