@@ -11,7 +11,7 @@ mar_top, mar_start = inc.win_h / 24, inc.win_h / 3
 displays_fixed = gtk.Fixed()
 
 backgroud_cbtn = gtk.ColorButton()
-backgroud_cbtn.set_color(gdk.Color(6682, 7453, 11051))
+backgroud_cbtn.set_color(gdk.Color(7782, 8553, 12051))
 backgroud_cbtn.set_sensitive(0)
 backgroud_cbtn.set_property("width-request", inc.win_w / 1.6)
 backgroud_cbtn.set_property("height-request", inc.win_h / 1.6)
@@ -26,7 +26,13 @@ rotate_l.get_style_context().add_class("label")
 rotate_l.set_xalign(0)
 rotate_l.set_property("width-request", inc.main_const_def)
 
-display_formats = ["Display 1", "Display 2"]
+display_formats = []
+import screeninfo
+displays = screeninfo.get_monitors()
+for i in displays:
+    display_formats.append(i.name)
+print(displays)
+current_mode = ""
 
 display_selector = gtk.ComboBoxText()
 for i in display_formats:
@@ -41,15 +47,22 @@ for i in resolut_formats:
     resolut_selector.append_text(i)
 resolut_selector.set_active(0)
 
-rotate_formats = ["Left", "Right"]
+rotate_formats = ["0°", "90°", "180°", "270°"]
 
 rotate_selector = gtk.ComboBoxText()
 for i in rotate_formats:
     rotate_selector.append_text(i)
 rotate_selector.set_active(0)
 
+import os
+def change_resolution(*args):
+
+    os.popen("xrandr --output " + displays[display_selector.get_active()].name + " --mode " + resolut_formats[resolut_selector.get_active()])
+
 apply_b = gtk.Button(label="apply")
 apply_b.set_property("width-request", inc.main_const_def)
+apply_b.connect("clicked", change_resolution)
+
 
 displays_fixed.add(backgroud_cbtn)
 displays_fixed.move(backgroud_cbtn, inc.win_w / 14, inc.win_h / 5)

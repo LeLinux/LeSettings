@@ -44,22 +44,22 @@ wal_l.get_style_context().add_class("label")
 wal_l.set_xalign(0)
 wal_l.set_property("width-request", inc.main_const_def)
 
-hight_l1 = gtk.Label("hight")
+hight_l1 = gtk.Label("Height")
 hight_l1.get_style_context().add_class("label")
 hight_l1.set_xalign(0)
 hight_l1.set_property("width-request", inc.main_const_def)
 
-hight_l2 = gtk.Label("hight")
+hight_l2 = gtk.Label("Height")
 hight_l2.get_style_context().add_class("label")
 hight_l2.set_xalign(0)
 hight_l2.set_property("width-request", inc.main_const_def)
 
-width_l1 = gtk.Label("width")
+width_l1 = gtk.Label("Width")
 width_l1.get_style_context().add_class("label")
 width_l1.set_xalign(0)
 width_l1.set_property("width-request", inc.main_const_def)
 
-width_l2 = gtk.Label("width")
+width_l2 = gtk.Label("Width")
 width_l2.get_style_context().add_class("label")
 width_l2.set_xalign(0)
 width_l2.set_property("width-request", inc.main_const_def)
@@ -77,7 +77,7 @@ hight_s1.set_hexpand(True)
 hight_s1.set_draw_value(0)
 
 hight_s2 = gtk.HScale(adjustment=adjustment2)
-hight_s2.set_property("width-request", inc.main_const_def)
+hight_s2.set_property("width-request", inc.main_const_def - inc.main_const_def / 12)
 hight_s2.set_vexpand(True)
 hight_s2.set_hexpand(True)
 hight_s2.set_draw_value(0)
@@ -94,10 +94,12 @@ width_s2.set_vexpand(True)
 width_s2.set_hexpand(True)
 width_s2.set_draw_value(0)
 
-browse_b = gtk.Button(label="browse")
-browse_b.set_property("width-request", inc.main_const_def)
+browse_b = gtk.Button(label="Browse")
+browse_b.set_property("width-request", inc.main_const_def / 3)
+browse_b.set_margin_start(inc.main_const_def /  2)
 
-apply_b = gtk.Button(label="apply")
+
+apply_b = gtk.Button(label="Apply")
 apply_b.set_property("width-request", inc.main_const_def)
 
 desktop_fixed.add(backgroud_cbtn)
@@ -110,7 +112,7 @@ desktop_fixed.add(plank_cbt)
 desktop_fixed.move(plank_cbt, inc.win_w / 4.3, inc.win_h / 1.33)
 
 desktop_fixed.add(top_l)
-desktop_fixed.move(top_l, inc.win_w / 1.18, inc.win_h / 6)
+desktop_fixed.move(top_l, inc.win_w / 1.3, inc.win_h / 6)
 
 desktop_fixed.add(hight_l1)
 desktop_fixed.move(hight_l1, inc.win_w / 1.3, inc.win_h / 4)
@@ -125,13 +127,13 @@ desktop_fixed.add(width_s1)
 desktop_fixed.move(width_s1, inc.win_w / 1.2, inc.win_h / 3.15)
 
 desktop_fixed.add(down_l)
-desktop_fixed.move(down_l, inc.win_w / 1.2, inc.win_h / 2.4)
+desktop_fixed.move(down_l, inc.win_w / 1.3, inc.win_h / 2.4)
 
 desktop_fixed.add(hight_l2)
 desktop_fixed.move(hight_l2, inc.win_w / 1.3, inc.win_h / 2)
 
 desktop_fixed.add(hight_s2)
-desktop_fixed.move(hight_s2, inc.win_w / 1.2, inc.win_h / 2.04)
+desktop_fixed.move(hight_s2, inc.win_w / 1.2, inc.win_h / 2.015)
 
 desktop_fixed.add(width_l2)
 desktop_fixed.move(width_l2, inc.win_w / 1.3, inc.win_h / 1.72)
@@ -140,10 +142,10 @@ desktop_fixed.add(width_s2)
 desktop_fixed.move(width_s2, inc.win_w / 1.2, inc.win_h / 1.75)
 
 desktop_fixed.add(wal_l)
-desktop_fixed.move(wal_l, inc.win_w / 1.2, inc.win_h / 1.5)
+desktop_fixed.move(wal_l, inc.win_w / 1.3, inc.win_h / 1.5)
 
 desktop_fixed.add(browse_b)
-desktop_fixed.move(browse_b, inc.win_w / 1.26, inc.win_h / 1.33)
+desktop_fixed.move(browse_b, inc.win_w / 1.2, inc.win_h / 1.5)
 
 desktop_fixed.add(apply_b)
 desktop_fixed.move(apply_b, inc.win_w / 1.26, inc.win_h / 1.1)
