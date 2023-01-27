@@ -18,6 +18,7 @@ import scripts.menus.system.sounds as snds
 import scripts.menus.system.power as pwr
 import scripts.menus.devices.keyboard as kbd
 import scripts.menus.devices.mouse as mse
+import scripts.menus.devices.displays as dsp
 import scripts.menus.appearance.desktop as dsk
 import scripts.menus.connections.wifi as wifi
 from scripts.iconsNconst import *
@@ -29,8 +30,12 @@ start_y = -1 * inc.win_h - 100
 
 main_fixed = gtk.Fixed()
 
+main_fixed.add(dsp.displays_fixed)
+main_fixed.move(dsp.displays_fixed, start_x, start_y)
+
+
 main_fixed.add(mse.mouse_grid)
-main_fixed.move(mse.mouse_grid, start_x, start_x)
+main_fixed.move(mse.mouse_grid, start_x, start_y)
 
 main_fixed.add(dsk.desktop_fixed)
 main_fixed.move(dsk.desktop_fixed, start_x, start_y)

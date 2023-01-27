@@ -23,3 +23,4 @@ def btn_connect():
 
 	devices_menu.keyboard_b.connect("clicked", g2.go2keyboard)
 	devices_menu.mouse_b.connect("clicked", g2.go2mouse)
+	devices_menu.displays_b.connect("clicked", g2.go2displays)
